@@ -1,0 +1,141 @@
+{
+  "albums": [
+    {
+      "id": 1,
+      "title": "solo sonidos",
+      "artist": "artistaAlbum1",
+      "cover": "https://placehold.co/64",
+      "cover_big": "https://placehold.co/256",
+      "content": [
+        {
+          "id": 1,
+          "title": "tituloMultimedia1",
+          "multimedia": "https://samplelib.com/lib/preview/mp3/sample-3s.mp3",
+          "cover": "https://placehold.co/64",
+          "cover_big": "https://placehold.co/256",
+          "artist": "artista",
+          "created_at": "2025-04-01T10:00:00Z",
+          "album_name": "solo sonidos",
+          "duration": 3
+        },
+        {
+          "id": 2,
+          "title": "tituloMultimedia2",
+          "multimedia": "https://samplelib.com/lib/preview/mp3/sample-6s.mp3",
+          "cover": "https://placehold.co/64",
+          "cover_big": "https://placehold.co/256",
+          "artist": "artista",
+          "created_at": "2025-04-02T10:00:00Z",
+          "album_name": "solo sonidos",
+          "duration": 6
+        },
+        {
+          "id": 3,
+          "title": "tituloMultimedia3",
+          "multimedia": "https://samplelib.com/lib/preview/mp3/sample-9s.mp3",
+          "cover": "https://placehold.co/64",
+          "cover_big": "https://placehold.co/256",
+          "artist": "artista",
+          "created_at": "2025-04-03T10:00:00Z",
+          "album_name": "solo sonidos",
+          "duration": 9
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "solo videos",
+      "artist": "artistaAlbum2",
+      "cover": "https://placehold.co/64",
+      "cover_big": "https://placehold.co/256",
+      "content": [
+        {
+          "id": 4,
+          "title": "tituloMultimedia4",
+          "multimedia": "https://samplelib.com/lib/preview/mp4/sample-5s.mp4",
+          "cover": "https://placehold.co/64",
+          "cover_big": "https://placehold.co/256",
+          "artist": "artista",
+          "created_at": "2025-04-04T10:00:00Z",
+          "album_name": "solo videos",
+          "duration": 5
+        },
+        {
+          "id": 5,
+          "title": "tituloMultimedia5",
+          "multimedia": "https://samplelib.com/lib/preview/mp4/sample-15s.mp4",
+          "cover": "https://placehold.co/64",
+          "cover_big": "https://placehold.co/256",
+          "artist": "artista",
+          "created_at": "2025-04-05T10:00:00Z",
+          "album_name": "solo videos",
+          "duration": 15
+        },
+        {
+          "id": 6,
+          "title": "tituloMultimedia6",
+          "multimedia": "https://samplelib.com/lib/preview/mp4/sample-20s.mp4",
+          "cover": "https://placehold.co/64",
+          "cover_big": "https://placehold.co/256",
+          "artist": "artista",
+          "created_at": "2025-04-06T10:00:00Z",
+          "album_name": "solo videos",
+          "duration": 20
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "mezcla",
+      "artist": "artistaAlbum3",
+      "cover": "https://placehold.co/64",
+      "cover_big": "https://placehold.co/256",
+      "content": [
+        {
+          "id": 7,
+          "title": "tituloMultimedia7",
+          "multimedia": "https://samplelib.com/lib/preview/mp4/sample-30s.mp4",
+          "cover": "https://placehold.co/64",
+          "cover_big": "https://placehold.co/256",
+          "artist": "artista",
+          "created_at": "2025-04-07T10:00:00Z",
+          "album_name": "mezcla",
+          "duration": 30
+        },
+        {
+          "id": 8,
+          "title": "tituloMultimedia8",
+          "multimedia": "https://samplelib.com/lib/preview/mp4/sample-5s.mp4",
+          "cover": "https://placehold.co/64",
+          "cover_big": "https://placehold.co/256",
+          "artist": "artista",
+          "created_at": "2025-04-08T10:00:00Z",
+          "album_name": "mezcla",
+          "duration": 5
+        },
+        {
+          "id": 9,
+          "title": "tituloMultimedia9",
+          "multimedia": "https://samplelib.com/lib/preview/mp3/sample-15s.mp3",
+          "cover": "https://placehold.co/64",
+          "cover_big": "https://placehold.co/256",
+          "artist": "artista",
+          "created_at": "2025-04-09T10:00:00Z",
+          "album_name": "mezcla",
+          "duration": 15
+        },
+        {
+          "id": 10,
+          "title": "tituloMultimedia10",
+          "multimedia": "https://samplelib.com/lib/preview/mp3/sample-12s.mp3",
+          "cover": "https://placehold.co/64",
+          "cover_big": "https://placehold.co/256",
+          "artist": "artista",
+          "created_at": "2025-04-10T10:00:00Z",
+          "album_name": "mezcla",
+          "duration": 12
+        }
+      ]
+    }
+  ]
+}
