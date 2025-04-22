@@ -106,62 +106,69 @@ export default function Main() {
                 <AlbumContext.Provider value={{ currentAlbum, setCurrentAlbum }}>
                     <MultimediaContext.Provider value={{ currentMultimedia, setCurrentMultimedia }}>
                         <article className="bg-black flex-grow flex p-4 gap-2 overflow-y-auto">
-                            <aside className="bg-stone-800 p-4 rounded-lg w-[420px] ">
+                            <aside className="bg-stone-800 p-4 rounded-lg md:w-1/3 w-[150px] ">
                                 <AlbumLists />
                             </aside>
                             <section className="flex-grow bg-stone-800 p-4 rounded-lg shadow-lg text-white">
                                 <MultimediaList />
                             </section>
-                            <aside className="bg-stone-800 p-4 rounded-lg w-[350px] ">
-                                <MultiUse multimedia={currentMultimedia} isVideo={isVideo} multimediaRef={multimediaRef} configMultimedia={configMultimedia} setConfigMultimedia={setConfigMultimedia} setEventListenerTimeUpdate={setEventListenerTimeUpdate} />
-                            </aside>
+                            {
+                                currentMultimedia ? (<aside className="hidden lg:block bg-stone-800 p-4 rounded-lg w-[350px] ">
+                                    <MultiUse multimedia={currentMultimedia} isVideo={isVideo} multimediaRef={multimediaRef} configMultimedia={configMultimedia} setConfigMultimedia={setConfigMultimedia} setEventListenerTimeUpdate={setEventListenerTimeUpdate} />
+                                </aside>) : null
+                            }
+
                         </article>
 
                         {currentMultimedia ? (
-                            <section className="w-full p-4 text-center text-white bg-black flex">
-
-                                <div className="flex gap-4 flex-grow-2">
-                                    <img className="rounded-lg" src={currentMultimedia.cover} alt="imagen del disco" />
-                                    <div className="flex flex-col self-end text-start p-1">
-                                        <h4>{currentMultimedia.title}</h4>
-                                        <p>{currentMultimedia.artist}</p>
-                                    </div>
+                            <>
+                                <div className="block lg:hidden bg-stone-800 p-4 rounded-lg w-full ">
+                                    <MultiUse multimedia={currentMultimedia} isVideo={isVideo} multimediaRef={multimediaRef} configMultimedia={configMultimedia} setConfigMultimedia={setConfigMultimedia} setEventListenerTimeUpdate={setEventListenerTimeUpdate} />
                                 </div>
+                                <section className="w-full p-4 text-center text-white bg-black flex">
 
-                                <div className="flex-grow-16 justify-items-center">
-                                    <div className="flex gap-2 items-center">
-                                        <button onClick={toBeImplemented} className="w-4 h-4 scale-90 hover:scale-100 cursor-pointer transition"><span><img src="../images/icons/shuffle.png" alt="shuffle Icon" /></span></button>
-                                        <button onClick={toBeImplemented} className="w-4 h-4 scale-90 hover:scale-100 cursor-pointer transition"><span><img src="../images/icons/previous.png" alt="backward Icon" /></span></button>
-                                        <button onClick={() => {
-                                            if (multimediaRef.current.paused) {
-                                                multimediaRef.current.play();
-                                            }
-                                            else {
-                                                multimediaRef.current.pause();
-                                            }
-                                        }} className="w-6 h-6 scale-90 hover:scale-100 cursor-pointer transition"><span><img src="../images/icons/play-button.png" alt="play Icon" /></span></button>
-                                        <button onClick={toBeImplemented} className="w-4 h-4 scale-90 hover:scale-100 cursor-pointer transition"><span><img src="../images/icons/foward.png" alt="foward Icon" /></span></button>
-                                        <button onClick={toBeImplemented} className="w-4 h-4 scale-90 hover:scale-100 cursor-pointer transition"><span><img src="../images/icons/loop.png" alt="loop Icon" /></span></button>
-                                    </div>
-                                    <div className="px-8 w-full flex items-center gap-4">
-                                        <span>
-                                            {Math.floor(configMultimedia.currentSecond / 60)}:{Math.floor(configMultimedia.currentSecond % 60).toString().padStart(2, '0')}
-                                        </span>
-                                        <input
-                                            type="range"
-                                            min="0"
-                                            max={Math.floor(configMultimedia.duracion)}
-                                            step={0.01}
-                                            value={configMultimedia.currentSecond}
-                                            onChange={(e) => handleMultimediaMomento(Number(e.target.value))}
-                                            className="w-full h-1 bg-gray-300 rounded-lg appearance-none cursor-pointer accent-blue-600"
-                                        />
-                                        <span>
-                                            {Math.floor(configMultimedia.duracion / 60)}:{Math.floor(configMultimedia.duracion % 60).toString().padStart(2, '0')}
-                                        </span>
+                                    <div className="flex gap-4 flex-grow-2">
+                                        <img className="rounded-lg" src={currentMultimedia.cover} alt="imagen del disco" />
+                                        <div className="flex flex-col self-end text-start p-1">
+                                            <h4>{currentMultimedia.title}</h4>
+                                            <p>{currentMultimedia.artist}</p>
+                                        </div>
                                     </div>
 
-                                    {/* <div className="hidden">
+                                    <div className="flex-grow-16 justify-items-center">
+                                        <div className="flex gap-2 items-center">
+                                            <button onClick={toBeImplemented} className="w-4 h-4 scale-90 hover:scale-100 cursor-pointer transition"><span><img src="../images/icons/shuffle.png" alt="shuffle Icon" /></span></button>
+                                            <button onClick={toBeImplemented} className="w-4 h-4 scale-90 hover:scale-100 cursor-pointer transition"><span><img src="../images/icons/previous.png" alt="backward Icon" /></span></button>
+                                            <button onClick={() => {
+                                                if (multimediaRef.current.paused) {
+                                                    multimediaRef.current.play();
+                                                }
+                                                else {
+                                                    multimediaRef.current.pause();
+                                                }
+                                            }} className="w-6 h-6 scale-90 hover:scale-100 cursor-pointer transition"><span><img src="../images/icons/play-button.png" alt="play Icon" /></span></button>
+                                            <button onClick={toBeImplemented} className="w-4 h-4 scale-90 hover:scale-100 cursor-pointer transition"><span><img src="../images/icons/foward.png" alt="foward Icon" /></span></button>
+                                            <button onClick={toBeImplemented} className="w-4 h-4 scale-90 hover:scale-100 cursor-pointer transition"><span><img src="../images/icons/loop.png" alt="loop Icon" /></span></button>
+                                        </div>
+                                        <div className="px-8 w-full flex items-center gap-4">
+                                            <span>
+                                                {Math.floor(configMultimedia.currentSecond / 60)}:{Math.floor(configMultimedia.currentSecond % 60).toString().padStart(2, '0')}
+                                            </span>
+                                            <input
+                                                type="range"
+                                                min="0"
+                                                max={Math.floor(configMultimedia.duracion)}
+                                                step={0.01}
+                                                value={configMultimedia.currentSecond}
+                                                onChange={(e) => handleMultimediaMomento(Number(e.target.value))}
+                                                className="w-full h-1 bg-gray-300 rounded-lg appearance-none cursor-pointer accent-blue-600"
+                                            />
+                                            <span>
+                                                {Math.floor(configMultimedia.duracion / 60)}:{Math.floor(configMultimedia.duracion % 60).toString().padStart(2, '0')}
+                                            </span>
+                                        </div>
+
+                                        {/* <div className="hidden">
                                         {isVideo ? (
                                             <video src={currentMultimedia.multimedia}
                                                 ref={multimediaRef}
@@ -193,22 +200,24 @@ export default function Main() {
 
                                         )}
                                     </div> */}
-                                </div>
-                                <div className="flex-grow-1 flex gap-2 items-center p-4">
-                                    <img onClick={() => { handleMuted() }} className="w-4 h-4 scale-90 hover:scale-100 cursor-pointer" src={volumeIcon} alt="icono de volumen" />
-                                    <input
-                                        type="range"
-                                        min="0"
-                                        max="1"
-                                        step={0.01}
-                                        value={configMultimedia.volumen}
-                                        onChange={(e) => handleVolumen(Number(e.target.value))}
-                                        className="w-full h-1 bg-gray-300 rounded-lg appearance-none cursor-pointer accent-green-600"
-                                    />
-                                </div>
+                                    </div>
+                                    <div className="flex-grow-1 flex gap-2 items-center p-4">
+                                        <img onClick={() => { handleMuted() }} className="w-4 h-4 scale-90 hover:scale-100 cursor-pointer" src={volumeIcon} alt="icono de volumen" />
+                                        <input
+                                            type="range"
+                                            min="0"
+                                            max="1"
+                                            step={0.01}
+                                            value={configMultimedia.volumen}
+                                            onChange={(e) => handleVolumen(Number(e.target.value))}
+                                            className="w-full h-1 bg-gray-300 rounded-lg appearance-none cursor-pointer accent-green-600"
+                                        />
+                                    </div>
 
 
-                            </section>
+                                </section>
+                            </>
+
                         ) : (null)}
 
 

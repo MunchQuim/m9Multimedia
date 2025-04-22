@@ -39,10 +39,10 @@ export default function MultiUse({ multimedia, isVideo, multimediaRef, configMul
                     }}
                 />
             ) : (
-                <section className="overflow-hidden">
-                    <img className="m-auto" src={multimedia.cover_big} alt="cover" />
-                    <h1 className="text-white text-4xl">{multimedia.title}</h1>
-                    <p className="text-gray-400">{multimedia.artist}</p>
+                <section className="overflow-hidden lg:text-left text-center">
+                    <img className="lg:w-64 lg:h-64 w-48 h-48 m-auto" src={multimedia.cover_big} alt="cover" />
+                    <h1 className="text-white text-2xl lg:text-4xl ">{multimedia.title}</h1>
+                    <p className="lg:text-base text-sm text-gray-400">{multimedia.artist}</p>
                     <audio
                         src={multimedia.multimedia}
                         ref={multimediaRef}
